@@ -296,7 +296,7 @@ for player in teamRaptors {
     
 }
 
-let letters = [teamDragonsLetter, teamSharksLetter, teamRaptorsLetter]
+let letters = [teamDragonsLetter, teamSharksLetter, teamRaptorsLetter] 
 
 // Thanks and look forward to hearing back from Treehouse! Thouroughly enjoyed this challenge :)
 
