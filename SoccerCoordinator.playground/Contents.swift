@@ -272,23 +272,31 @@ let teamRaptorsAverageHeight = teamAverageHeight(teamHeights: teamRaptorsHeights
 
 // Have used iteration for each team with a "for in loop" and interpolation within a personalised letter. I did also consider creating a function, as to not repeat code.
 
+var teamDragonsLetter: String = ("")
+var teamSharksLetter: String = ("")
+var teamRaptorsLetter: String = ("")
+
+
 for player in teamDragons {
     
-    print("Dear \(player["Guardian/s"]!), \(player["Name"]!) has been selected to play with team Dragons in this years Soccer League! The first training schedule will be on March 17th, at 1pm. Thanks and look forward to seeing you there!")
+    teamDragonsLetter.append("Dear \(player["Guardian/s"]!), \(player["Name"]!) has been selected to play with team Dragons in this years Soccer League! The first training schedule will be on March 17th, at 1pm. Thanks and look forward to seeing you there!")
     
 }
 
 for player in teamSharks {
     
-    print("Dear \(player["Guardian/s"]!), \(player["Name"]!) has been selected to play with team Sharks in this years Soccer League! The first training schedule will be on March 17th, at 3pm. Thanks and look forward to seeing you there!")
+    teamSharksLetter.append("Dear \(player["Guardian/s"]!), \(player["Name"]!) has been selected to play with team Sharks in this years Soccer League! The first training schedule will be on March 17th, at 3pm. Thanks and look forward to seeing you there!")
     
 }
 
 for player in teamRaptors {
     
-    print("Dear \(player["Guardian/s"]!), \(player["Name"]!) has been selected to play with team Raptors in this years Soccer League! The first training schedule will be on March 18th, at 1pm. Thanks and look forward to seeing you there!")
+
+    teamRaptorsLetter.append("Dear \(player["Guardian/s"]!), \(player["Name"]!) has been selected to play with team Raptors in this years Soccer League! The first training schedule will be on March 18th, at 1pm. Thanks and look forward to seeing you there!")
     
 }
+
+let letters = [teamDragonsLetter, teamSharksLetter, teamRaptorsLetter]
 
 // Thanks and look forward to hearing back from Treehouse! Thouroughly enjoyed this challenge :)
 
