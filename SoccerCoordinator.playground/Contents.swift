@@ -109,7 +109,7 @@ let player18: [String: String] = ["Name": "Herschel Krustofski",
 
 //Single array containing all player dictionaries 
 
-var playerData = [player1, player2, player3, player4, player5, player6, player7, player8, player9, player10, player11, player12, player13, player14, player15, player16, player17, player18]
+var players = [player1, player2, player3, player4, player5, player6, player7, player8, player9, player10, player11, player12, player13, player14, player15, player16, player17, player18]
 
 
 /* Part 2 - Create logic to iterate through all 18 players and assign them to teams such that the number of experienced players on each team are the same. Store each team’s players in its own new collection variable for use in Part 3.
@@ -127,7 +127,7 @@ var playersWithExperience: [[String: String]] = []
 var playersWithoutExperience: [[String: String]] = []
 
 
-for player in playerData {
+for player in players {
     
     if player["Experience"] == "true" {
         playersWithExperience.append(player)
@@ -140,14 +140,14 @@ for player in playerData {
 // Equal values (based on relevant data without magic numbers)
 
 let teams = [teamDragons, teamSharks, teamRaptors]
-let equalPlayersPerTeam: Int = playerData.count / teams.count
+let equalPlayersPerTeam: Int = players.count / teams.count
 
 var evenExperiencedPlayers: Int = playersWithExperience.count / teams.count
 
 
 // Iteration and distribution of equally experienced players into teams using all data. (With allowance for uneven amount of players, although not specifically asked for)
 
-if playerData.count % teams.count == 0 {
+if players.count % teams.count == 0 {
     
     for experiencedPlayer in playersWithExperience {
         
@@ -167,7 +167,7 @@ if playerData.count % teams.count == 0 {
 }
 
  
- if playerData.count % teams.count == 0 {
+ if players.count % teams.count == 0 {
  
     for unexperiencedPlayer in playersWithoutExperience {
  
