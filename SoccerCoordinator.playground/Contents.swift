@@ -121,8 +121,11 @@ var teamDragons: [[String: String]] = []
 var teamSharks: [[String: String]] = []
 var teamRaptors: [[String: String]] = []
 
+// Experience Arrays (temporary to be used for distribution)
+
 var playersWithExperience: [[String: String]] = []
 var playersWithoutExperience: [[String: String]] = []
+
 
 for player in playerData {
     
@@ -134,11 +137,15 @@ for player in playerData {
 
 }
 
+// Equal values (based on relevant data without magic numbers)
+
 let teams = [teamDragons, teamSharks, teamRaptors]
 let equalPlayersPerTeam: Int = playerData.count / teams.count
 
 var evenExperiencedPlayers: Int = playersWithExperience.count / teams.count
 
+
+// Iteration and distribution of equally experienced players into teams using all data. (With allowance for uneven amount of players, although not specifically asked for)
 
 if playerData.count % teams.count == 0 {
     
@@ -159,8 +166,6 @@ if playerData.count % teams.count == 0 {
     print("Uneven amount of players!")
 }
 
-
-
  
  if playerData.count % teams.count == 0 {
  
@@ -180,7 +185,86 @@ if playerData.count % teams.count == 0 {
 } else {
     print("Uneven amount of players!")
 }
+
+/* Add logic to ensure that each team's average height is within 1.5 inches of the others.
+  (For exceeds expectations credit!) 
+*/
+
+
+
+func convertStringtoInt(player: [String: String]) -> Int {
+    
+    let heightValue = player["Height"]
+    
+    return Int(heightValue!)!
+}
+
+var teamDragonsHeightsInt: [Int] = [0]
+
+
+for playerHeightString in teamDragons {
+    
+    
+    var value = convertStringtoInt(player: playerHeightString)
+    teamDragonsHeightsInt.append(value)
+    
+    }
+
+var teamSharksHeightsInt: [Int] = [0]
+
+
+for playerHeightString in teamSharks {
+    
+    
+    var value = convertStringtoInt(player: playerHeightString)
+    teamSharksHeightsInt.append(value)
+    
+}
+
+var teamRaptorsHeightsInt: [Int] = [0]
+
+
+for playerHeightString in teamRaptors {
+    
+    
+    var value = convertStringtoInt(player: playerHeightString)
+    teamRaptorsHeightsInt.append(value)
+    
+}
+
+print(teamDragonsHeightsInt)
+print(teamSharksHeightsInt)
+print(teamRaptorsHeightsInt)
+
+func teamAverageHeight(teamHeights: [Int]) -> Int{
+    
+    let team = teamHeights
+    var sum = 0
+    for height in team {
+        sum += height
+        
+    }
+    
+    let averageSum = sum / teamDragons.count
+    return averageSum
+}
+
+let teamDragonsAverageHeight = teamAverageHeight(teamHeights: teamDragonsHeightsInt)
+let teamSharksAverageHeight = teamAverageHeight(teamHeights: teamSharksHeightsInt)
+let teamRaptorsAverageHeight = teamAverageHeight(teamHeights: teamRaptorsHeightsInt)
+
+
+
+
+/* Part 3 - Create logic that iterates through all three teams of players and generates a personalized letter to the guardians, letting them know which team the child has been placed on and when they should attend their first team team practice.
  
+ Dragons - March 17, 1pm
+ Sharks - March 17, 3pm
+ Raptors - March 18, 1pm
+ 
+*/
+
+
 
 
 
