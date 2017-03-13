@@ -186,11 +186,13 @@ if playerData.count % teams.count == 0 {
     print("Uneven amount of players!")
 }
 
+
 /* Add logic to ensure that each team's average height is within 1.5 inches of the others.
   (For exceeds expectations credit!) 
 */
 
 
+// I reaserched outside of course material a way to convert my String values of heights to Int values. I then created a function to do this for each player.
 
 func convertStringtoInt(player: [String: String]) -> Int {
     
@@ -198,6 +200,8 @@ func convertStringtoInt(player: [String: String]) -> Int {
     
     return Int(heightValue!)!
 }
+
+// I iterated through each team to create a new array for each team with the heights in Int value.
 
 var teamDragonsHeightsInt: [Int] = [0]
 
@@ -232,9 +236,7 @@ for playerHeightString in teamRaptors {
     
 }
 
-print(teamDragonsHeightsInt)
-print(teamSharksHeightsInt)
-print(teamRaptorsHeightsInt)
+// I created another function to return the average height from those arrays with all heights.
 
 func teamAverageHeight(teamHeights: [Int]) -> Int{
     
@@ -249,9 +251,13 @@ func teamAverageHeight(teamHeights: [Int]) -> Int{
     return averageSum
 }
 
+// Then used the above function to return the singular height average for each team.
+
 let teamDragonsAverageHeight = teamAverageHeight(teamHeights: teamDragonsHeightsInt)
 let teamSharksAverageHeight = teamAverageHeight(teamHeights: teamSharksHeightsInt)
 let teamRaptorsAverageHeight = teamAverageHeight(teamHeights: teamRaptorsHeightsInt)
+
+// -------Would love some help or some inspiration regarding the next step of this challenge; to make sure heights are within 1.5 inches without jeapordising equal experience. I am at a loss moving forward with this..---------
 
 
 
@@ -264,6 +270,27 @@ let teamRaptorsAverageHeight = teamAverageHeight(teamHeights: teamRaptorsHeights
  
 */
 
+// Have used iteration for each team with a "for in loop" and interpolation within a personalised letter. I did also consider creating a function, as to not repeat code.
+
+for player in teamDragons {
+    
+    print("Dear \(player["Guardian/s"]!), \(player["Name"]!) has been selected to play with team Dragons in this years Soccer League! The first training schedule will be on March 17th, at 1pm. Thanks and look forward to seeing you there!")
+    
+}
+
+for player in teamSharks {
+    
+    print("Dear \(player["Guardian/s"]!), \(player["Name"]!) has been selected to play with team Sharks in this years Soccer League! The first training schedule will be on March 17th, at 3pm. Thanks and look forward to seeing you there!")
+    
+}
+
+for player in teamRaptors {
+    
+    print("Dear \(player["Guardian/s"]!), \(player["Name"]!) has been selected to play with team Raptors in this years Soccer League! The first training schedule will be on March 18th, at 1pm. Thanks and look forward to seeing you there!")
+    
+}
+
+// Thanks and look forward to hearing back from Treehouse! Thouroughly enjoyed this challenge :)
 
 
 
