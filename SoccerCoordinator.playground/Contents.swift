@@ -187,6 +187,8 @@ if players.count % teams.count == 0 {
 }
 
 
+
+
 /* Add logic to ensure that each team's average height is within 1.5 inches of the others.
   (For exceeds expectations credit!) 
 */
@@ -296,11 +298,10 @@ for player in teamRaptors {
     
 }
 
-let letters = [teamDragonsLetter, teamSharksLetter, teamRaptorsLetter] 
+let letters = [teamDragonsLetter, teamSharksLetter, teamRaptorsLetter]
+print(teamDragonsLetter, teamSharksLetter, teamRaptorsLetter)
 
 // Thanks and look forward to hearing back from Treehouse! Thouroughly enjoyed this challenge :)
-
-
 
 
 
